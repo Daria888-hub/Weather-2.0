@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
- import FormatDate from "./FormatDate"
+
+ import WeatherInfo from "./WeatherInfo";
+
 export default function Weather(){
     
     const [ weatherData, setWeatherData] = useState({ ready : false});
@@ -22,55 +24,25 @@ function handleResponse(response){
 }
 
 if (weatherData.ready){
-     return( <div className= "weather">
-
-    <form > 
-        <div className="row">   
-        <div className="col-8">
-<input type="search" placeholder="enter the city" className="col-8"/>
-</div>
-<div className="col-3"> 
-<input type="submit" value="Search" className= "btn btn-primary"/>
-</div>
-</div>
-</form>
-        <h1>{weatherData.city}</h1>
-        <ul>
-            <li> < FormatDate date={weatherData.date}/> </li>
-            <li>{weatherData.description}</li>
-        </ul>
-<div className="row">
-<div className= "col-6">
-    
-<img src= { weatherData.icon}></img>
-<span className="tempreture"> {Math.round(weatherData.tempreture)} </span> 
-<span className="unit"> C</span>
-</div>
-<div className= "col-6">
-    <ul>
-        <li> Humidity = {weatherData.humidity}%</li>
-        <li>Wind = {weatherData.wind}  km/h</li>
-       
-    </ul>
-
-</div>
-
-
-</div>
+     return( <div><div className="weather">
+         <form>
+             <div className="row">
+                 <div className="col-8">
+                     <input type="search" placeholder="enter the city" className="col-8" />
+                 </div>
+                 <div className="col-3">
+                     <input type="submit" value="Search" className="btn btn-primary" />
+                 </div>
+             </div>
+         </form>
+         <WeatherInfo data={weatherData} />
      </div>
-    )
-
-}
-else { 
-     let city ="Brisbane"
+);
+} else { let city ="Brisbane"
     const ApiKey ="869fd32af5911e8174d6e4840a9664b5";
     const ApiUrl =`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${ApiKey}&units=metric`
 
     axios.get(ApiUrl).then(handleResponse);
-    return ( "Loading...")
-
-}
-
-   
-   
-}
+    return ( "Loading...")}
+     
+</div>)}
