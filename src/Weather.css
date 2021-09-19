@@ -1,3 +1,38 @@
 .weather{
-    border: 1px solid black;
-}
+    
+     
+        background: #ffffff99;
+        padding: 10px 50px;
+        border-radius: 25px;
+        border: 1px solid black;
+        font-family: "Rochester", cursive;
+      }
+
+      .Weather h1 {
+        font-size: 24px;
+        font-weight: 100;
+        margin: 20px 0 0 0;
+        line-height: 29px;
+   }
+      
+      .weather li{
+        font-size: 25px;
+        
+        line-height: 30px;
+        list-style: none;
+      }
+
+      .weather .tempreture {
+        font-size: 30px;
+        color: rgb(100, 94, 94);
+        text-decoration: none;}
+
+        .Weather .unit {
+            color: rgb(33, 33, 33);
+            font-size: 16px;
+            font-weight: 400;
+            position: relative;
+            line-height: 1;
+            top: -34px;
+          }
+         
