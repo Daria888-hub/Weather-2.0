@@ -9,7 +9,7 @@ function App() {
       
       <footer>
        <p>Created by Daria Lee {"  "}
-     < a href="https://github.com/Daria888-hub/Weather-2.0" target="_blank">Open sourse</a> 
+     < a href="https://github.com/Daria888-hub/Weather-2.0" target="_blank" rel="noopener noreferrer">Open sourse</a> 
      </p>
      </footer>
       </div>
