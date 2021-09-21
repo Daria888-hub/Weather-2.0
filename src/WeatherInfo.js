@@ -11,16 +11,17 @@ export default function WeatherInfo(props) {
             <li> < FormatDate date={props.data.date}/> </li>
             <li>{props.data.description}</li>
         </ul>
-        <div className="row mt-3">
+        <div className="row mt-7">
                 <div className="col-6">
                     <div className="clearfix">
-                        <span className="float-left">
+
+                        <div className="float-left">
                             <WeatherIcons code={props.data.icon} size={45}/>
-                        </span>
+                        </div>
                         
-                        <span className="float-left">
+                        <div className="float-left">
                             <WeatherTempreture celsius={props.data.tempreture} />
-                        </span>
+                        </div>
                     </div>
                 </div>
 <div className= "col-6">
