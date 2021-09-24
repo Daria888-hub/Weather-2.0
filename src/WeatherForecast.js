@@ -28,12 +28,19 @@ export default function WeatherForecast(props) {
                   <ForecastDate data={dayliForecast} />
                 </div>
               );
-            }
-          })}
-        </div>
+            }else{
+                return null;
+              }
+            })}
+
+
+
+
+</div>
       </div>
     );
   } else {
+
     let ApiKey = "869fd32af5911e8174d6e4840a9664b5";
     let lon = props.coordinates.lon;
     let lat = props.coordinates.lat;
